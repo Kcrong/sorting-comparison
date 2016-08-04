@@ -24,10 +24,24 @@ def selection_sort(num_list):
         min_idx = using_list.index(min(using_list)) + i
         num_list[i], num_list[min_idx] = num_list[min_idx], num_list[i]
 
-    return num_list
+
+# 삽입 정렬
+@CalcTime
+def insertion_sort(num_list):
+    for i in range(1, len(num_list)):
+        key = num_list[i]
+        j = i - 1
+        while j >= 0 and key < num_list[j]:
+            num_list[j], num_list[j + 1] = num_list[j + 1], num_list[j]
+            j -= 1
+        num_list[j + 1] = key
 
 
 if __name__ == '__main__':
     print("Selection Sort: ")
     after_sort = selection_sort(nums)
 
+    print("Insertion Sort: ")
+    after_sort = insertion_sort(nums)
+
+    print("Bubble Sort: ")
