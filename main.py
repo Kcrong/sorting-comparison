@@ -37,6 +37,15 @@ def insertion_sort(num_list):
         num_list[j + 1] = key
 
 
+# 버블 정렬
+@CalcTime
+def bubble_sort(num_list):
+    for i in range(len(num_list) - 1):
+        for j in range(len(num_list) - i):
+            if num_list[j - 1] > num_list[j]:
+                num_list[j - 1], num_list[j] = num_list[j], num_list[j - 1]
+
+
 if __name__ == '__main__':
     print("Selection Sort: ")
     after_sort = selection_sort(nums)
@@ -45,3 +54,4 @@ if __name__ == '__main__':
     after_sort = insertion_sort(nums)
 
     print("Bubble Sort: ")
+    after_sort = bubble_sort(nums)
